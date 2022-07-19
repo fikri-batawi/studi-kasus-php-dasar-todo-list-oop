@@ -18,4 +18,16 @@ function testShowTodolist()
   $todolistService->showTodolist();
 }
 
-testShowTodolist();
+function testAddTodolist()
+{
+  $todolistRepository = new TodolistRepositoryImpl;
+  $todolistService    = new TodolistServiceImpl($todolistRepository);
+  $todolistService->addTodolist("Makan");
+  $todolistService->showTodolist();
+  $todolistService->addTodolist("Minum");
+  $todolistService->showTodolist();
+  $todolistService->addTodolist("Mandi");
+  $todolistService->showTodolist();
+}
+
+testAddTodolist();

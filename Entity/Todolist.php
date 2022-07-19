@@ -12,7 +12,7 @@ namespace Entity {
 
     public function getTodo(): string
     {
-      return $this->todolist;
+      return $this->todo;
     }
 
     public function setTodolist(string $todo): void
