@@ -2,7 +2,7 @@
 
 namespace Service {
 
-  use Repository\TodolistRepositoryImpl;
+  use Repository\TodolistRepository;
 
   interface TodolistService {
 
@@ -16,7 +16,12 @@ namespace Service {
 
   class TodolistServiceImpl implements TodolistService {
 
-    private TodolistRepositoryImpl $todolistRepository;
+    private TodolistRepository $todolistRepository;
+
+    function __construct(TodolistRepository $todolistRepository)
+    {
+      $this->todolistRepository = $todolistRepository;
+    }
 
     function addTodolist(string $string): void
     {

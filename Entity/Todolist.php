@@ -5,7 +5,7 @@ namespace Entity {
 
     private string $todo;
 
-    public function __construct(string $todo)
+    public function __construct(string $todo = "")
     {
       $this->todo = $todo;
     }
