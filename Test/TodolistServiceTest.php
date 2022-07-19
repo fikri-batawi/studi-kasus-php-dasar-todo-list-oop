@@ -7,7 +7,7 @@ require_once './Entity/Todolist.php';
 require_once './Repository/TodolistRepository.php';
 require_once './Service/TodolistService.php';
 
-function testShowTodolist()
+function testServiceShowTodolist()
 {
   $todolistRepository = new TodolistRepositoryImpl;
   $todolistService    = new TodolistServiceImpl($todolistRepository);
@@ -18,7 +18,7 @@ function testShowTodolist()
   $todolistService->showTodolist();
 }
 
-function testAddTodolist()
+function testServiceAddTodolist()
 {
   $todolistRepository = new TodolistRepositoryImpl;
   $todolistService    = new TodolistServiceImpl($todolistRepository);
@@ -30,7 +30,7 @@ function testAddTodolist()
   $todolistService->showTodolist();
 }
 
-function testRemoveTodolist()
+function testServiceRemoveTodolist()
 {
   $todolistRepository = new TodolistRepositoryImpl;
   $todolistService    = new TodolistServiceImpl($todolistRepository);
@@ -44,4 +44,4 @@ function testRemoveTodolist()
   $todolistService->showTodolist();
 }
 
-testRemoveTodolist();
+testServiceRemoveTodolist();
