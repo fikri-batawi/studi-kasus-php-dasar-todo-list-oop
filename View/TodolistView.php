@@ -30,7 +30,7 @@ namespace View {
         if($pilihan == "1"){
           $this->addTodolist();
         }elseif($pilihan == "2"){
-          
+          $this->removeTodolist();
         }elseif($pilihan == "x"){
           break;
         }else{
@@ -54,7 +54,15 @@ namespace View {
     }
     public function removeTodolist(): void
     {
+      echo "MENGHAPUS TODO" . PHP_EOL;
 
+      $pilihan = InputHelper::input("Nomor (x untuk batalkan)");
+
+      if ($pilihan == "x") {
+        echo "Batal menghapus todo" . PHP_EOL;
+      } else {
+        $this->todolistService->removeTodolist($pilihan);
+      }
     }
 
   }
