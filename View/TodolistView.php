@@ -28,7 +28,7 @@ namespace View {
       
         $pilihan = InputHelper::input("Pilih");
         if($pilihan == "1"){
-          
+          $this->addTodolist();
         }elseif($pilihan == "2"){
           
         }elseif($pilihan == "x"){
@@ -42,7 +42,15 @@ namespace View {
     }
     public function addTodolist(): void
     {
+      echo "MENAMBAH TODO" . PHP_EOL;
 
+      $todo = InputHelper::input("Todo (x untuk batal)");
+
+      if ($todo == "x") {
+        echo "Batal menambah todo" . PHP_EOL;
+      } else {
+        $this->todolistService->addTodolist($todo);
+      }
     }
     public function removeTodolist(): void
     {
